@@ -1,0 +1,265 @@
+/********
+
+	BEGIN CSS3 MEDIA QUERIES FOR RESPONSIVE STYLING
+	
+	If not overridden, default styling and mobile styling take precedent
+	Styling inheritance can be overriden by adding another id or class selector
+	to add weight to css styling statement. 
+
+*********/
+
+/* ---- MOBILE DEVICES ---- */
+@media screen and (min-width: 0px) {
+	/* ---- NAVIGATION BAR --- */
+	#fadeandscale {
+		transform: scale(0.8);
+	}
+	div#context-menu-popover {
+		zindex: 100;
+		visibility: hidden;
+		'
+	}
+	.popup_visible #fadeandscale {
+		transform: scale(1);
+	}
+	#nav-logo {
+		padding-right: 15px;
+	}
+	#wrx-name {
+		visibility: hidden;
+	}
+	#app-area {
+		width: 95%;
+		margin: 0 auto;
+	}
+	.dropdown-toggle span.right-nav-dropdown-text {
+		display: none; 
+	}
+
+	/** ---- TABLE STYLING **/
+	#toolbar {
+		display: inline;
+	}
+	#auto-refresh-label {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	#auto-refresh-container {
+		
+	}
+	#toolbar-buttons {
+		
+	}
+	#toolbar-filter {
+		
+	}
+
+	/* ---- LOGIN PAGE ---- */
+	.login-logo {
+		margin: 0 auto;
+		display: block;
+		padding-bottom: 10px;
+	}
+	.login-body {
+		background-color: #333;
+	}
+	.form-signin {
+		max-width: 330px;
+		padding: 15px;
+		margin: 0 auto;
+	}
+	.form-signin .form-signin-heading, .form-signin .checkbox {
+		margin-bottom: 10px;
+	}
+	.form-signin .checkbox {
+		font-weight: normal;
+	}
+	.form-signin .form-control {
+		position: relative;
+		font-size: 16px;
+		height: auto;
+		padding: 10px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.form-signin .form-control:focus {
+		z-index: 2;
+	}
+	.form-signin input[type="text"] {
+		margin-bottom: -1px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.form-signin input[type="password"] {
+		margin-bottom: 10px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+	.login-card {
+		margin-top: 20px;
+		padding: 40px 0px 20px 0px;
+		background-color: #f7f7f7;
+		-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+		-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	}
+	.profile-img {
+		width: 96px;
+		height: 96px;
+		margin: 0 auto 10px;
+		display: block;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+	}
+	.top-buffer-20 {
+		margin-top: 20px;
+	}
+	.top-buffer-30 {
+		margin-top: 30px;
+	}
+	.top-buffer-40 {
+		margin-top: 40px;
+	}
+	.padding-left-0 {
+		padding-left: 0px;
+	}
+	table.dataTable tbody tr.stripe1 {
+		background-color: #ffffff;
+	}
+	table.dataTable tbody tr.stripe2 {
+		background-color: #e1e1e1;
+		border-bottom: solid #a0a0a0;
+	}
+	.resp-iframe-wrapper {
+		width: 80%;
+		height: 100%;
+		margin: 0 auto;
+		background: #CCC
+	}
+	.resp-iframe {
+		position: relative;
+	}
+	.resp-iframe .ratio {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.resp-iframe iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	/* ---- END LOGIN PAGE ---- */
+	.detail-modal {
+		width: 95% !important;
+		height: 95% !important;
+	}
+}
+
+/* ---- #END MOBILE DEVICES ---- */
+
+/* ---- TABLET DEVICES ---- */
+@media screen and (min-width: 768px) {
+	#wrx-name {
+		visibility: visible;
+	}
+	.dropdown-toggle span.right-nav-dropdown-text {
+		display: inline; 
+	}
+}
+
+}
+
+/* ---- END TABLET DEVICES ---- */
+
+/* ---- LARGE SCREEN DEVICES ---- */
+@media screen and (min-width: 1024px) {
+}
+
+/* ---- LARGE SCREEN DEVICES ---- */
+
+/* Body and structure
+-------------------------------------------------- */
+body {
+	position: relative;
+	margin: 10px 12px;
+	height: 100%;
+}
+
+#loading {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 10;
+}
+
+.btn-huge {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.pad-10-top {
+	padding-top: 10px;
+}
+
+.pad-20-top {
+	padding-top: 20px;
+}
+
+.pad-30-top {
+	padding-top: 30px;
+}
+
+.pad-20-left {
+	padding-left: 20px;
+}
+
+.pad-10-left-right {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.margin-0-bottom-important {
+	margin-bottom: 0px !important; 
+}
+
+.margin-50-left {
+	margin-left: 50px;
+}
+
+.margin-30-left {
+	margin-left: 40px;
+}
+
+.margin-30-left {
+	margin-left: 30px;
+}
+.margin-20-left {
+	margin-left: 20px;
+}
+
+
+
+
+
+#release-load-modal {
+	top: 20%;
+	outline: none;
+}
+
+#favorites a:link {
+	color: #444;
+}
+
+#favorites a:visited {
+	color: #444;
+}
+
+.detail-modal {
+	width: 80% !important; 
+	height: 70% !important; 
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+		
+		<context:component-scan base-package="com.stout.starter.core.security" />
+		<context:annotation-config />
+	
+	<security:http auto-config="true">
+		<security:intercept-url pattern="/" access="permitAll"/>
+		<security:intercept-url pattern="/login**" access="permitAll"/>
+		<security:intercept-url pattern="/logErr**" access="permitAll"/>
+		<security:intercept-url pattern="/resources/**" access="permitAll"/>
+        <security:intercept-url pattern="/**" access="isAuthenticated()"/>
+        <security:form-login login-page="/"  login-processing-url="/login" 
+        					 default-target-url="/welcome" 
+        					 authentication-success-handler-ref="baseAuthenticationSuccessHandler"
+        					authentication-failure-handler-ref="baseAuthenticationFailureHandler"/>
+        					 
+        <security:logout invalidate-session="false" success-handler-ref="baseLogoutSuccessHandler"   logout-url="/perform_logout" />
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider ref="baseAuthProvider" />
+    </security:authentication-manager>
+
+
+</beans>
