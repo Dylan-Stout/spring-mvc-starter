@@ -4,7 +4,16 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	
+	<!-- SECURITY BEANS -->
+	<!-- Login authorization provider & user details service (LOGIN) -->
+	<bean id="baseAuthProvider" class="com.stout.starter.core.security.BaseAuthenticationProvider"></bean>
+	<bean id="userDetailsService" class="com.stout.starter.core.security.UserDetailsServiceImpl"></bean>
+	<bean id="baseAuthenticationSuccessHandler" class="com.stout.starter.core.security.BaseAuthenticationSuccessHandler"></bean>
+	<bean id="baseAuthenticationFailureHandler" class="com.stout.starter.core.security.BaseAuthenticationFailureHandler"></bean>
+	<bean id="baseLogoutSuccessHandler" class="com.stout.starter.core.security.BaseLogoutSuccessHandler"></bean>
+	<!-- END SECURITY -->
+	
 		<!-- Include security configuration  -->
 		<import resource="classpath*:/securityContext.xml"/>
 </beans>
