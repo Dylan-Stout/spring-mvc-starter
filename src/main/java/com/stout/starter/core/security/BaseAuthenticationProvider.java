@@ -10,8 +10,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.daifukuamerica.wrxj.web.core.UserSession;
-import com.daifukuamerica.wrxj.web.model.User;
 
 /**
  * Authentication provider for authentication of user credentials submitted by the login page
@@ -41,7 +39,7 @@ public class BaseAuthenticationProvider implements AuthenticationProvider
 	    	String userName = authentication.getName().trim() + ""; // add trailing empty in case null
 	        String password = authentication.getCredentials().toString().trim() + ""; //add trailing empty in case null
 	        Authentication auth = null;
-	        User user = UserSession.userManager.authenticateLogin(userName, password); //validate the login credentials
+	       /* User user = UserSession.userManager.authenticateLogin(userName, password); //validate the login credentials
 			if (user.isValidated())
 	        {
 	        	UserDetails userDetails = userDetailsService.loadUserByUsername(userName); 
@@ -51,7 +49,8 @@ public class BaseAuthenticationProvider implements AuthenticationProvider
 	        else 
 	        {
 	          throw new BadCredentialsException("1000");
-	        }
+	        }*/
+	        return null; 
 
 	}
 

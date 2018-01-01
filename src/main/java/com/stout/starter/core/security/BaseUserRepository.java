@@ -9,11 +9,7 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 import org.springframework.security.core.GrantedAuthority;
 
-import com.daifukuamerica.wrxj.dataserver.standard.StandardUserServer;
-import com.daifukuamerica.wrxj.dbadapter.data.EmployeeData;
-import com.daifukuamerica.wrxj.factory.Factory;
-import com.daifukuamerica.wrxj.jdbc.DBException;
-import com.daifukuamerica.wrxj.web.core.connection.WrxjConnection;
+
 
 /**
  * Singleton class with Map of users and their details in the wrxj database to 
@@ -50,7 +46,7 @@ public class BaseUserRepository
      * Protected for use with singleton instantiation. 
      */
 	protected BaseUserRepository(){
-		 WrxjConnection.getInstance();
+	/*	 WrxjConnection.getInstance();
 	        StandardUserServer sUserServer = Factory.create(StandardUserServer.class);
 	        List<String> usernames = null;
 			try
@@ -97,7 +93,7 @@ public class BaseUserRepository
 					}
 	        	UserDetailsImpl userDetails = new UserDetailsImpl(user, displayName, role, null, authorities);
 	        	userRepository.put(user, userDetails);
-	        }
+	        }*/
 	}
 
 	/**

@@ -13,11 +13,11 @@ import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import com.daifukuamerica.wrxj.web.core.UserSession;
+/*import com.daifukuamerica.wrxj.web.core.UserSession;
 import com.daifukuamerica.wrxj.web.model.User;
 import com.daifukuamerica.wrxj.web.model.json.wrx.UserPreferenceModel;
 import com.daifukuamerica.wrxj.web.service.dao.UserPreferenceService;
-
+*/
 /**
  * Post-success login authentication handler. Runs after successful spring invoked login. 
  * 
@@ -33,8 +33,8 @@ public class BaseAuthenticationSuccessHandler implements AuthenticationSuccessHa
 	@Autowired
 	UserDetailsServiceImpl userDetailService; 
 	
-	@Autowired
-	UserPreferenceService userPreferenceService; 
+	/*@Autowired
+	UserPreferenceService userPreferenceService; */
 
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy(); 
 	
@@ -46,7 +46,7 @@ public class BaseAuthenticationSuccessHandler implements AuthenticationSuccessHa
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication auth)
 			throws IOException, ServletException
 	{
-		Authentication authentication = authenticationFacade.getAuthentication();
+		/*Authentication authentication = authenticationFacade.getAuthentication();
 		String username = authentication.getName(); 
 		UserDetailsImpl userDetails = userDetailService.loadUserByUsername(username); 
 		User user = new User(userDetails.getUsername(), userDetails.getDisplayName(), userDetails.getDisplayRole()); 
@@ -55,7 +55,7 @@ public class BaseAuthenticationSuccessHandler implements AuthenticationSuccessHa
 		UserSession.addUserSession(user, session);
 		session.setAttribute("user", user);
 		session.setAttribute("userPref", userPreferences); 
-		response.setStatus(HttpServletResponse.SC_OK);
+		response.setStatus(HttpServletResponse.SC_OK);*/
 		redirectStrategy.sendRedirect(request, response, "/welcome");
 	}
 
