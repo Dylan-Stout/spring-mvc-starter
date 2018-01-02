@@ -15,5 +15,5 @@
 	<!-- END SECURITY -->
 	
 		<!-- Include security configuration  -->
-		<import resource="classpath*:/securityContext.xml"/>
+		<import resource="/appServlet/securityContext.xml"/>
 </beans>
