@@ -10,8 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="user")
 public class User {
 	
 	@Id
@@ -31,6 +33,9 @@ public class User {
 	
 	@Column(name="address")
 	private String address;
+	
+	@Column(name="hash")
+	private String password; 
 
 	public int getId() {
 		return id;
@@ -70,8 +75,23 @@ public class User {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public Collection<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Collection<Role> roles) {
+		this.roles = roles;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	} 
-	
 	
 	
 	
