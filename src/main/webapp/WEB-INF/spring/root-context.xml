@@ -14,6 +14,10 @@
 	<bean id="baseLogoutSuccessHandler" class="com.stout.starter.core.security.BaseLogoutSuccessHandler"></bean>
 	<!-- END SECURITY -->
 	
+	<!-- Service Layer -->
+	<bean id="userService" class="com.stout.starter.service.UserProfileService"></bean>
+	<!-- END Service Layer -->
+	
 		<!-- Include security configuration  -->
-		<import resource="/appServlet/securityContext.xml"/>
+	<import resource="/appServlet/securityContext.xml"/> 
 </beans>

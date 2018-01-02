@@ -12,7 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 
 /**
- * Singleton class with Map of users and their details in the wrxj database to 
+ * Singleton class with Map of users and their details in the base database to 
  * use when assigning roles and permissions. 
  * 
  * Author: dystout

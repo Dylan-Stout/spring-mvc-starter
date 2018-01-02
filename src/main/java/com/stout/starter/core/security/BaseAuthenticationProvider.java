@@ -10,6 +10,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import com.stout.starter.model.User;
+import com.stout.starter.service.UserProfileService;
+
 
 /**
  * Authentication provider for authentication of user credentials submitted by the login page
@@ -27,6 +30,9 @@ public class BaseAuthenticationProvider implements AuthenticationProvider
 	
 	@Autowired
 	UserDetailsServiceImpl userDetailsService; 
+	
+	@Autowired
+	UserProfileService userService; 
 
 	/**
 	 * Build a UsernamePasswordAuthenticationToken to hand back to Spring Security if 
@@ -39,8 +45,8 @@ public class BaseAuthenticationProvider implements AuthenticationProvider
 	    	String userName = authentication.getName().trim() + ""; // add trailing empty in case null
 	        String password = authentication.getCredentials().toString().trim() + ""; //add trailing empty in case null
 	        Authentication auth = null;
-	       /* User user = UserSession.userManager.authenticateLogin(userName, password); //validate the login credentials
-			if (user.isValidated())
+	        boolean isValidated = userService.authenticateLogin(userName, password); //validate the login credentials
+			if (isValidated)
 	        {
 	        	UserDetails userDetails = userDetailsService.loadUserByUsername(userName); 
 	        	auth = new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(), userDetails.getAuthorities());
@@ -49,8 +55,8 @@ public class BaseAuthenticationProvider implements AuthenticationProvider
 	        else 
 	        {
 	          throw new BadCredentialsException("1000");
-	        }*/
-	        return null; 
+	        }
+	      
 
 	}
 

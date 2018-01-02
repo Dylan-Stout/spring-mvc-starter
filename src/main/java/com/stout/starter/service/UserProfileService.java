@@ -1,5 +1,9 @@
 package com.stout.starter.service;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.stout.starter.core.hibernate.HibernateUtils;
 import com.stout.starter.model.User;
 
 public class UserProfileService {
@@ -12,9 +16,16 @@ public class UserProfileService {
 	 * @param password
 	 * @return if success - User object, if fail - null 
 	 */
-	public User authenticateUser(String userName, String password)
+	public boolean authenticateLogin(String userName, String password)
 	{ 
-		return null; // TODO implement model layer for password authentication
+		SessionFactory factory = HibernateUtils.getSessionFactory();
+	    Session session = factory.getCurrentSession();
+		return false; // TODO implement model layer for password authentication
+	}
+	
+	public User getUser(String userId)
+	{
+		return null; 
 	}
 	
 	
