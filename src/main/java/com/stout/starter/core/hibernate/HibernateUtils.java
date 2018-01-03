@@ -29,11 +29,11 @@ public class HibernateUtils
 	            /**
 	             * Add persistent entities
 	             */
-	            sources.addAnnotatedClass(User.class);
+	            /*sources.addAnnotatedClass(User.class);
 	            sources.addAnnotatedClass(Privilege.class); 
 	            sources.addAnnotatedClass(Role.class); 
 	            sources.addAnnotatedClass(RolePrivilege.class); 
-	            sources.addAnnotatedClass(UserPreferences.class); 
+	            sources.addAnnotatedClass(UserPreferences.class); */
 	            
 	            Metadata metaData = sources.getMetadataBuilder().build();
 	            
@@ -48,6 +48,8 @@ public class HibernateUtils
 	      if(sessionFactory!=null)
 	    	  sessionFactory.close();
 	 }
+	 
+	
 
 	
 	

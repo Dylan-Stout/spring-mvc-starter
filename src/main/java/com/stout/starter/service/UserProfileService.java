@@ -1,12 +1,22 @@
 package com.stout.starter.service;
 
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.stout.starter.controller.LoginController;
 import com.stout.starter.core.hibernate.HibernateUtils;
 import com.stout.starter.model.User;
 
 public class UserProfileService {
+	
+	private static final Logger logger = LoggerFactory.getLogger(UserProfileService.class); 
 	
 	/**
 	 * Base user authentication logic. Use hashing alg to check password is correct and
@@ -20,6 +30,17 @@ public class UserProfileService {
 	{ 
 		SessionFactory factory = HibernateUtils.getSessionFactory();
 	    Session session = factory.getCurrentSession();
+	    logger.debug("Authentication attempt for user: " + userName + " ");
+	    try{
+	    	session.beginTransaction(); 
+	           
+	           
+	          
+	    }catch(Exception e)
+	    {
+	    	
+	    }
+	    
 		return false; // TODO implement model layer for password authentication
 	}
 	
@@ -39,5 +60,7 @@ public class UserProfileService {
 	{ 
 		//TODO implement logout logic 
 	}
+	
+	
 
 }
